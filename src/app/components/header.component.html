@@ -1,0 +1,14 @@
+<!-- src\app\components\header.component.html -->
+
+<header>
+  <p-menubar [model]="items">
+    <ng-template #end>
+      <p-button
+        icon="pi pi-sun"
+        [rounded]="true"
+        ariaLabel="Toggle Dark Mode"
+        (onClick)="toggleDarkMode()"
+      />
+    </ng-template>
+  </p-menubar>
+</header>

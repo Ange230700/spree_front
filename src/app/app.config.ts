@@ -1,12 +1,40 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// src\app\app.config.ts
 
-import { routes } from './app.routes';
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  provideZoneChangeDetection,
+} from '@angular/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideRouter } from '@angular/router';
+import { providePrimeNG } from 'primeng/config';
+import Material from '@primeng/themes/material';
+
+import { routes } from '~/src/app/app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes)
-  ]
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    providePrimeNG({
+      ripple: true,
+      zIndex: {
+        modal: 1100, // dialog, sidebar
+        overlay: 1000, // dropdown, overlaypanel
+        menu: 1000, // overlay menus
+        tooltip: 1100, // tooltip
+      },
+      inputVariant: 'filled',
+      theme: {
+        preset: Material,
+        options: {
+          prefix: 'prime',
+          darkModeSelector: '.prime-dark-mode',
+          cssLayer: false,
+        },
+      },
+    }),
+  ],
 };
