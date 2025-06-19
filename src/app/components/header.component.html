@@ -4,9 +4,11 @@
   <p-menubar [model]="items">
     <ng-template #end>
       <p-button
-        icon="pi pi-sun"
+        [icon]="colorMode === 'dark' ? 'pi pi-sun' : 'pi pi-moon'"
         [rounded]="true"
-        ariaLabel="Toggle Dark Mode"
+        [ariaLabel]="
+          colorMode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+        "
         (onClick)="toggleDarkMode()"
       />
     </ng-template>

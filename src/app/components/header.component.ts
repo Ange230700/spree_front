@@ -13,17 +13,40 @@ import { ButtonModule } from 'primeng/button';
 })
 export class HeaderComponent implements OnInit {
   items: MenuItem[] = [];
+  colorMode: 'light' | 'dark' = 'dark';
 
   ngOnInit() {
     this.items = [
       // Put here the menu items. Check docs for more info.
     ];
+    const savedMode = localStorage.getItem('colorMode');
+
+    if (savedMode === 'light' || savedMode === 'dark') {
+      this.colorMode = savedMode;
+    } else {
+      this.colorMode = document.documentElement.classList.contains(
+        'prime-dark-mode',
+      )
+        ? 'dark'
+        : 'light';
+    }
+
+    if (this.colorMode === 'dark') {
+      document.documentElement.classList.add('prime-dark-mode');
+    } else {
+      document.documentElement.classList.remove('prime-dark-mode');
+    }
   }
 
   toggleDarkMode() {
-    const element = document.querySelector('html');
-    if (element !== null) {
-      element.classList.toggle('prime-dark-mode');
+    const element = document.documentElement;
+    if (this.colorMode === 'dark') {
+      element.classList.remove('prime-dark-mode');
+      this.colorMode = 'light';
+    } else {
+      element.classList.add('prime-dark-mode');
+      this.colorMode = 'dark';
     }
+    localStorage.setItem('colorMode', this.colorMode);
   }
 }

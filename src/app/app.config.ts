@@ -8,8 +8,8 @@ import {
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
-import { MyPreset } from '~/src/styles';
 
+import { MyPreset } from '~/src/styles';
 import { routes } from '~/src/app/app.routes';
 
 export const appConfig: ApplicationConfig = {
