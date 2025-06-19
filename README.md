@@ -1,61 +1,166 @@
+<!-- README.md -->
+
+Absolutely! Here’s a rewritten and more complete **README.md** description for your project, **SpreeFront**, using your template and tailored to your actual configuration:
+
+---
+
 # SpreeFront
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+![SpreeFront Logo](link-to-logo.png)
 
-## Development server
+SpreeFront is a modern, customizable Angular application template designed for scalable web development. It leverages the latest Angular 20, Tailwind CSS, and PrimeNG for powerful UI theming, component flexibility, and rapid frontend delivery. Built with robust linting, formatting, and commit workflow automation, SpreeFront streamlines development and enforces consistent code quality.
 
-To start a local development server, run:
+## Table of Contents
+
+- [Demo](#demo)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Running the Project](#running-the-project)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Environment Variables](#environment-variables)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
+
+## Demo
+
+Link to a live demo or screenshots:
+
+![Screenshot](link-to-screenshot.png)
+
+## Tech Stack
+
+**Frontend:**
+
+- [Angular 20](https://angular.io/)
+- [PrimeNG](https://www.primefaces.org/primeng/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [PrimeIcons](https://www.primefaces.org/primeicons/)
+
+**Tooling & Automation:**
+
+- ESLint (with Prettier integration)
+- Husky (git hooks)
+- Commitizen & Commitlint (conventional commits)
+- Lint-staged (pre-commit checks)
+- Jasmine + Karma (unit testing)
+- GitHub Actions (CI/CD ready)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (>=20.x)
+- npm (>=9.x)
+- [Angular CLI](https://angular.io/cli)
+
+### Installation
 
 ```bash
-ng serve
+git clone https://github.com/username/spree-front.git
+cd spree-front
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Running the Project
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Start the development server:
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This will run `ng serve`. Open your browser at [http://localhost:4200](http://localhost:4200) to view the app.
+
+## Project Structure
 
 ```bash
-ng generate --help
+├── src
+│   ├── app              # Main Angular application code
+│   ├── environments     # Environment config files
+│   ├── styles.css       # Global styles (Tailwind, PrimeIcons)
+│   └── main.ts          # Application bootstrap
+├── public               # Static assets
+├── angular.json         # Angular project config
+├── package.json         # Project metadata and scripts
+├── tsconfig*.json       # TypeScript configuration
+└── ...                  # Other configuration and setup files
 ```
 
-## Building
+## API Documentation
 
-To build the project run:
+This template does not include direct API integration out of the box.
+Add your own API services and document endpoints here, or link to your [API reference](docs/api.md) if applicable.
+
+## Testing
+
+Unit tests use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/):
 
 ```bash
-ng build
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Configure and run your e2e tests as needed.
 
-## Running unit tests
+## Deployment
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Build the application for production:
 
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
+The production-ready files are generated in the `dist/` directory. Deploy these files to your preferred web server or hosting platform.
 
-For end-to-end (e2e) testing, run:
+## Environment Variables
 
-```bash
-ng e2e
+Sensitive or environment-specific values should be placed in the appropriate environment files, such as:
+
+- `src/environments/environment.ts`
+- `src/environments/environment.prod.ts`
+
+Example variables:
+
+```ts
+export const environment = {
+  production: false,
+  apiUrl: "http://localhost:3000/api",
+};
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Contributing
 
-## Additional Resources
+Contributions are welcome! Please follow these steps:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`npm run commit` or use `git commit`)
+4. Push to your fork (`git push origin feature/your-feature`)
+5. Create a Pull Request
+
+> **Commitizen** and **Commitlint** ensure standardized commit messages.
+
+## License
+
+MIT License
+
+## Acknowledgements
+
+Special thanks to:
+
+- [Angular](https://angular.io/)
+- [PrimeNG](https://www.primefaces.org/primeng/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Commitizen](http://commitizen.github.io/cz-cli/)
+- [Jasmine](https://jasmine.github.io/)
+
+## Contact
+
+Your Name – [your.email@example.com](mailto:your.email@example.com)
+[Project Link](https://github.com/username/spree-front)
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
