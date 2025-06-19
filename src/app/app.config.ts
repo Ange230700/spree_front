@@ -8,7 +8,7 @@ import {
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
-import Material from '@primeng/themes/material';
+import { MyPreset } from '~/src/styles';
 
 import { routes } from '~/src/app/app.routes';
 
@@ -28,7 +28,7 @@ export const appConfig: ApplicationConfig = {
       },
       inputVariant: 'filled',
       theme: {
-        preset: Material,
+        preset: MyPreset,
         options: {
           prefix: 'prime',
           darkModeSelector: '.prime-dark-mode',
