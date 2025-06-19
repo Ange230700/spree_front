@@ -2,53 +2,54 @@
 
 # SpreeFront
 
-![SpreeFront Logo](link-to-logo.png)
+<!-- ![Logo SpreeFront](link-to-logo.png) -->
 
-SpreeFront is a modern, customizable Angular application template designed for scalable web development. It leverages the latest Angular 20, Tailwind CSS, and PrimeNG for powerful UI theming, component flexibility, and rapid frontend delivery. Built with robust linting, formatting, and commit workflow automation, SpreeFront streamlines development and enforces consistent code quality.
+SpreeFront est un template d’application Angular moderne, conçu pour un développement web évolutif et personnalisable. Il exploite Angular 20, Tailwind CSS et PrimeNG pour offrir une expérience utilisateur riche, une gestion avancée des thèmes et une livraison rapide du frontend. L’intégration d’outils de linting, de formatage et d’automatisation des commits garantit une qualité de code constante et un workflow efficace.
 
-## Table of Contents
+## Table des matières
 
-- [Demo](#demo)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Running the Project](#running-the-project)
-- [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Environment Variables](#environment-variables)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
-- [Contact](#contact)
+<!-- * [Démo](#démo) -->
 
-## Demo
+- [Stack technique](#stack-technique)
+- [Prise en main](#prise-en-main)
+- [Lancement du projet](#lancement-du-projet)
+- [Structure du projet](#structure-du-projet)
+- [Documentation API](#documentation-api)
+- [Tests](#tests)
+- [Déploiement](#déploiement)
+- [Variables d’environnement](#variables-denvironnement)
+- [Contribuer](#contribuer)
+- [Licence](#licence)
+  <!-- * [Remerciements](#remerciements) -->
+  <!-- * [Contact](#contact) -->
 
-Link to a live demo or screenshots:
+<!-- ## Démo
 
-![Screenshot](link-to-screenshot.png)
+Lien vers une démo en ligne ou captures d’écran : -->
 
-## Tech Stack
+![Capture d’écran](link-to-screenshot.png)
 
-**Frontend:**
+## Stack technique
+
+**Frontend :**
 
 - [Angular 20](https://angular.io/)
 - [PrimeNG](https://www.primefaces.org/primeng/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [PrimeIcons](https://www.primefaces.org/primeicons/)
 
-**Tooling & Automation:**
+**Outils & automatisation :**
 
-- ESLint (with Prettier integration)
-- Husky (git hooks)
-- Commitizen & Commitlint (conventional commits)
-- Lint-staged (pre-commit checks)
-- Jasmine + Karma (unit testing)
-- GitHub Actions (CI/CD ready)
+- ESLint (avec intégration Prettier)
+- Husky (hooks Git)
+- Commitizen & Commitlint (commits conventionnels)
+- Lint-staged (vérifications pré-commit)
+- Jasmine + Karma (tests unitaires)
+- GitHub Actions (prêt pour CI/CD)
 
-## Getting Started
+## Prise en main
 
-### Prerequisites
+### Prérequis
 
 - Node.js (>=20.x)
 - npm (>=9.x)
@@ -62,101 +63,101 @@ cd spree-front
 npm install
 ```
 
-## Running the Project
+## Lancement du projet
 
-Start the development server:
+Démarrer le serveur de développement :
 
 ```bash
 npm start
 ```
 
-This will run `ng serve`. Open your browser at [http://localhost:4200](http://localhost:4200) to view the app.
+Accédez à l’application sur [http://localhost:4200](http://localhost:4200).
 
-## Project Structure
+## Structure du projet
 
 ```bash
 ├── src
-│   ├── app              # Main Angular application code
-│   ├── environments     # Environment config files
-│   ├── styles.css       # Global styles (Tailwind, PrimeIcons)
-│   └── main.ts          # Application bootstrap
-├── public               # Static assets
-├── angular.json         # Angular project config
-├── package.json         # Project metadata and scripts
-├── tsconfig*.json       # TypeScript configuration
-└── ...                  # Other configuration and setup files
+│   ├── app              # Code principal de l’application Angular
+│   ├── environments     # Fichiers de configuration d’environnement
+│   ├── styles.css       # Styles globaux (Tailwind, PrimeIcons)
+│   └── main.ts          # Bootstrap de l’application
+├── public               # Assets statiques
+├── angular.json         # Configuration Angular
+├── package.json         # Scripts et dépendances
+├── tsconfig*.json       # Configuration TypeScript
+└── ...                  # Autres fichiers de configuration
 ```
 
-## API Documentation
+## Documentation API
 
-This template does not include direct API integration out of the box.
-Add your own API services and document endpoints here, or link to your [API reference](docs/api.md) if applicable.
+Ce template ne propose pas d’intégration API par défaut.
+Ajoutez vos propres services ou liez la [documentation API](docs/api.md) ici si besoin.
 
-## Testing
+## Tests
 
-Unit tests use [Jasmine](https://jasmine.github.io/) and [Karma](https://karma-runner.github.io/):
+Les tests unitaires utilisent [Jasmine](https://jasmine.github.io/) et [Karma](https://karma-runner.github.io/) :
 
 ```bash
 npm test
 ```
 
-Configure and run your e2e tests as needed.
+Configurez et lancez vos tests end-to-end selon vos besoins.
 
-## Deployment
+## Déploiement
 
-Build the application for production:
+Générez la version de production :
 
 ```bash
 npm run build
 ```
 
-The production-ready files are generated in the `dist/` directory. Deploy these files to your preferred web server or hosting platform.
+Les fichiers prêts pour la production seront générés dans le dossier `dist/`. Déployez ce dossier sur l’hébergeur de votre choix.
 
-## Environment Variables
+## Variables d’environnement
 
-Sensitive or environment-specific values should be placed in the appropriate environment files, such as:
+Les variables sensibles ou spécifiques à l’environnement sont placées dans :
 
 - `src/environments/environment.ts`
 - `src/environments/environment.prod.ts`
 
-Example variables:
+Exemple :
 
 ```ts
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:3000/api",
+  apiBaseUrl: "http://localhost:3000",
 };
 ```
 
-## Contributing
+## Contribuer
 
-Contributions are welcome! Please follow these steps:
+Contributions bienvenues ! Pour participer :
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`npm run commit` or use `git commit`)
-4. Push to your fork (`git push origin feature/your-feature`)
-5. Create a Pull Request
+1. Forkez le dépôt
+2. Créez une branche (`git checkout -b feature/la-fonctionnalite`)
+3. Commitez vos modifications (`npm run commit` ou `git commit`)
+4. Poussez la branche (`git push origin feature/la-fonctionnalite`)
+5. Ouvrez une Pull Request
 
-> **Commitizen** and **Commitlint** ensure standardized commit messages.
+> **Commitizen** et **Commitlint** assurent la standardisation des messages de commit.
 
-## License
+## Licence
 
-MIT License
+Licence MIT
 
-## Acknowledgements
+<!-- ## Remerciements
 
-Special thanks to:
+Merci à :
 
-- [Angular](https://angular.io/)
-- [PrimeNG](https://www.primefaces.org/primeng/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Commitizen](http://commitizen.github.io/cz-cli/)
-- [Jasmine](https://jasmine.github.io/)
+* [Angular](https://angular.io/)
+* [PrimeNG](https://www.primefaces.org/primeng/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Commitizen](http://commitizen.github.io/cz-cli/)
+* [Jasmine](https://jasmine.github.io/) -->
 
-## Contact
+<!-- ## Contact
 
-Your Name – [your.email@example.com](mailto:your.email@example.com)
-[Project Link](https://github.com/username/spree-front)
+Votre Nom – [your.email@example.com](mailto:your.email@example.com)
+[Lien du projet](https://github.com/username/spree-front) -->
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
