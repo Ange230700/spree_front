@@ -1,9 +1,5 @@
 <!-- README.md -->
 
-Absolutely! Here’s a rewritten and more complete **README.md** description for your project, **SpreeFront**, using your template and tailored to your actual configuration:
-
----
-
 # SpreeFront
 
 ![SpreeFront Logo](link-to-logo.png)
