@@ -1,0 +1,101 @@
+<!-- src\app\records\record-form.component.html -->
+
+<div class="mx-auto max-w-lg p-4">
+  <h2 class="mb-4 text-2xl font-bold">
+    {{ isEdit ? "Edit Record" : "New Record" }}
+  </h2>
+
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <!-- Field 1 -->
+    <div>
+      <label for="field_1" class="mb-1 block font-medium">Field 1</label>
+      <input
+        id="field_1"
+        pInputText
+        formControlName="field_1"
+        class="w-full"
+        [ngClass]="{
+          'border-red-500':
+            itemForm.get('field_1')?.invalid &&
+            itemForm.get('field_1')?.touched,
+        }"
+      />
+      <div
+        *ngIf="
+          itemForm.get('field_1')?.invalid && itemForm.get('field_1')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Field 1 is required.
+      </div>
+    </div>
+
+    <!-- Field 2 (boolean) -->
+    <div class="flex items-center">
+      <p-checkbox formControlName="field_2" inputId="field_2"></p-checkbox>
+      <label for="field_2" class="ml-2">Field 2</label>
+    </div>
+
+    <!-- Field 3 (number) -->
+    <div>
+      <label for="field_3" class="mb-1 block font-medium">Field 3</label>
+      <input
+        id="field_3"
+        pInputText
+        type="number"
+        formControlName="field_3"
+        class="w-full"
+        [ngClass]="{
+          'border-red-500':
+            itemForm.get('field_3')?.invalid &&
+            itemForm.get('field_3')?.touched,
+        }"
+      />
+      <div
+        *ngIf="
+          itemForm.get('field_3')?.invalid && itemForm.get('field_3')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Field 3 is required and must be ≥ 0.
+      </div>
+    </div>
+
+    <!-- Field 4 (date) -->
+    <div>
+      <label for="field_4" class="mb-1 block font-medium">Field 4</label>
+      <p-calendar
+        id="field_4"
+        formControlName="field_4"
+        showIcon
+        class="w-full"
+      ></p-calendar>
+      <div
+        *ngIf="
+          itemForm.get('field_4')?.invalid && itemForm.get('field_4')?.touched
+        "
+        class="mt-1 text-sm text-red-500"
+      >
+        Field 4 is required.
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 flex space-x-2">
+      <button
+        pButton
+        type="submit"
+        label="Save"
+        [disabled]="loading"
+        class="flex-1"
+      ></button>
+      <button
+        pButton
+        type="button"
+        label="Cancel"
+        (click)="onCancel()"
+        class="p-button-secondary flex-1"
+      ></button>
+    </div>
+  </form>
+</div>

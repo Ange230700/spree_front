@@ -1,0 +1,64 @@
+<!-- src\app\records\records-list.component.html -->
+
+<div class="flex flex-1 flex-col items-center justify-center p-4">
+  <div class="mb-4 flex w-full items-center justify-between">
+    <h2 class="text-2xl font-bold">Records</h2>
+    <button
+      pButton
+      type="button"
+      label="New Item"
+      (click)="onCreate()"
+      class="p-button-sm"
+    ></button>
+  </div>
+
+  <p-table
+    [value]="records"
+    [loading]="loading"
+    [paginator]="true"
+    [rows]="3"
+    class="w-full"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th scope="col">Field 1</th>
+        <th scope="col">Field 2</th>
+        <th scope="col">Field 3</th>
+        <th scope="col">Field 4</th>
+        <th scope="col" class="text-center">Actions</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-record>
+      <tr>
+        <td>{{ record.field_1 }}</td>
+        <td>{{ record.field_3 }}</td>
+        <td>{{ record.field_4 }}</td>
+        <td class="text-center">
+          <i
+            class="pi"
+            [ngClass]="
+              record.field_2
+                ? 'pi-check-circle text-green-500'
+                : 'pi-times-circle text-red-500'
+            "
+          ></i>
+        </td>
+        <td class="flex flex-wrap items-center justify-evenly">
+          <button
+            pButton
+            icon="pi pi-pencil"
+            class="p-button-text p-button-sm mr-2"
+            (click)="onEdit(record)"
+          ></button>
+          <button
+            pButton
+            icon="pi pi-trash"
+            class="p-button-text p-button-sm p-button-danger"
+            (click)="onDelete(record)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -21,7 +21,6 @@ export const MyPreset = definePreset(Material, {
     colorScheme: {
       light: {
         surface: {
-          0: '#f0f0f0',
           50: '{gray.50}',
           100: '{gray.100}',
           200: '{gray.200}',
@@ -37,7 +36,6 @@ export const MyPreset = definePreset(Material, {
       },
       dark: {
         surface: {
-          0: '#ffffff',
           50: '{slate.50}',
           100: '{slate.100}',
           200: '{slate.200}',

@@ -4,14 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '~/src/environments/environment';
 import { Observable } from 'rxjs';
-
-export interface Record {
-  id: number;
-  field_1: string;
-  field_2: boolean;
-  field_3: number;
-  field_4: string;
-}
+import type { Record } from '~/src/app/records/record.model';
 
 @Injectable({ providedIn: 'root' })
 export class RecordsService {
