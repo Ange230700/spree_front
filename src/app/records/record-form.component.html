@@ -32,7 +32,12 @@
 
     <!-- Field 2 (boolean) -->
     <div class="flex items-center">
-      <p-checkbox formControlName="field_2" inputId="field_2"></p-checkbox>
+      <p-checkbox
+        formControlName="field_2"
+        inputId="field_2"
+        [(ngModel)]="checked"
+        binary="true"
+      ></p-checkbox>
       <label for="field_2" class="ml-2">Field 2</label>
     </div>
 
@@ -58,25 +63,6 @@
         class="mt-1 text-sm text-red-500"
       >
         Field 3 is required and must be ≥ 0.
-      </div>
-    </div>
-
-    <!-- Field 4 (date) -->
-    <div>
-      <label for="field_4" class="mb-1 block font-medium">Field 4</label>
-      <p-calendar
-        id="field_4"
-        formControlName="field_4"
-        showIcon
-        class="w-full"
-      ></p-calendar>
-      <div
-        *ngIf="
-          itemForm.get('field_4')?.invalid && itemForm.get('field_4')?.touched
-        "
-        class="mt-1 text-sm text-red-500"
-      >
-        Field 4 is required.
       </div>
     </div>
 

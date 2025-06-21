@@ -1,6 +1,7 @@
 // src/app/records/record-form.component.ts
 
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import {
   FormBuilder,
   FormGroup,
@@ -14,7 +15,6 @@ import type { Record } from '~/src/app/records/record.model';
 
 // PrimeNG modules:
 import { InputTextModule } from 'primeng/inputtext';
-import { CalendarModule } from 'primeng/calendar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 
@@ -30,7 +30,6 @@ import { of } from 'rxjs';
     CommonModule,
     ReactiveFormsModule,
     InputTextModule,
-    CalendarModule,
     CheckboxModule,
     ButtonModule,
     RouterModule,
@@ -41,6 +40,7 @@ export class RecordFormComponent implements OnInit {
   itemForm: FormGroup;
   isEdit = false;
   itemId?: number;
+  checked: boolean = false;
   loading = false;
 
   constructor(
@@ -53,7 +53,6 @@ export class RecordFormComponent implements OnInit {
       field_1: ['', Validators.required],
       field_2: [false],
       field_3: [0, Validators.required],
-      field_4: [new Date(), Validators.required],
     });
   }
 
@@ -76,7 +75,11 @@ export class RecordFormComponent implements OnInit {
       .subscribe({
         next: (record) => {
           if (record) {
-            this.itemForm.patchValue(record);
+            this.itemForm.patchValue({
+              field_1: record.field_1,
+              field_2: record.field_2,
+              field_3: record.field_3,
+            });
           }
         },
         error: (err) => {
@@ -106,8 +109,15 @@ export class RecordFormComponent implements OnInit {
       next: () => {
         this.router.navigate(['/records']);
       },
-      error: (err) => {
-        console.error('Error saving record', err);
+      error: (err: HttpErrorResponse) => {
+        if (err.status === 400 && Array.isArray(err.error.message)) {
+          console.error(
+            'Validation errors when when trying to save record:',
+            err.error.message,
+          );
+        } else {
+          console.error('Unexpected error when trying to save record', err);
+        }
         this.loading = false;
       },
     });
