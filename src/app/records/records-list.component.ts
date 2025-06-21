@@ -20,6 +20,17 @@ export class RecordsListComponent implements OnInit {
   records: Record[] = [];
   loading = false;
 
+  /** e.g. "+0200" or "-0400" */
+  get zoneOffset(): string {
+    // JS getTimezoneOffset returns minutes behind UTC, so invert:
+    const minutes = -new Date().getTimezoneOffset();
+    const sign = minutes >= 0 ? '+' : '-';
+    const abs = Math.abs(minutes);
+    const h = String(Math.floor(abs / 60)).padStart(2, '0');
+    const m = String(abs % 60).padStart(2, '0');
+    return `${sign}${h}${m}`;
+  }
+
   constructor(
     private readonly router: Router,
     private readonly recordsService: RecordsService,

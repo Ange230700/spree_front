@@ -21,10 +21,10 @@
   >
     <ng-template pTemplate="header">
       <tr>
-        <th scope="col">Field 1</th>
-        <th scope="col">Field 2</th>
-        <th scope="col">Field 3</th>
-        <th scope="col">Field 4</th>
+        <th scope="col">{{ record.field_1 }}</th>
+        <th scope="col">{{ record.field_3 }}</th>
+        <th scope="col">{{ record.field_4 }}</th>
+        <th scope="col">{{ record.field_2 }}</th>
         <th scope="col" class="text-center">Actions</th>
       </tr>
     </ng-template>
@@ -33,7 +33,7 @@
       <tr>
         <td>{{ record.field_1 }}</td>
         <td>{{ record.field_3 }}</td>
-        <td>{{ record.field_4 }}</td>
+        <td>{{ record.field_4 | date: "dd/MM/yyyy HH:mm" : zoneOffset }}</td>
         <td class="text-center">
           <i
             class="pi"

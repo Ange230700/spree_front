@@ -52,7 +52,7 @@ export class RecordFormComponent implements OnInit {
     this.itemForm = this.fb.group({
       field_1: ['', Validators.required],
       field_2: [false],
-      field_3: [null, [Validators.required, Validators.min(0)]],
+      field_3: [0, Validators.required],
       field_4: [new Date(), Validators.required],
     });
   }
