@@ -74,7 +74,14 @@ export class RecordsListComponent implements OnInit {
     }
     if (confirm('Are you sure you want to delete this record?')) {
       try {
-        this.recordsService.delete(record.id);
+        this.recordsService.delete(record.id).subscribe({
+          next: () => {
+            this.loadRecords();
+          },
+          error: (err) => {
+            console.error('Error deleting record', err);
+          },
+        });
         this.loadRecords();
       } catch (err) {
         console.error('Error deleting record', err);
