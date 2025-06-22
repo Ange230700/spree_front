@@ -5,7 +5,7 @@
     {{ isEdit ? "Edit Record" : "New Record" }}
   </h2>
 
-  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="space-y-4">
+  <form [formGroup]="recordForm" (ngSubmit)="onSubmit()" class="space-y-4">
     <!-- Field 1 -->
     <div>
       <label for="field_1" class="mb-1 block font-medium">Field 1</label>
@@ -16,13 +16,14 @@
         class="w-full"
         [ngClass]="{
           'border-red-500':
-            itemForm.get('field_1')?.invalid &&
-            itemForm.get('field_1')?.touched,
+            recordForm.get('field_1')?.invalid &&
+            recordForm.get('field_1')?.touched,
         }"
       />
       <div
         *ngIf="
-          itemForm.get('field_1')?.invalid && itemForm.get('field_1')?.touched
+          recordForm.get('field_1')?.invalid &&
+          recordForm.get('field_1')?.touched
         "
         class="mt-1 text-sm text-red-500"
       >
@@ -52,13 +53,14 @@
         class="w-full"
         [ngClass]="{
           'border-red-500':
-            itemForm.get('field_3')?.invalid &&
-            itemForm.get('field_3')?.touched,
+            recordForm.get('field_3')?.invalid &&
+            recordForm.get('field_3')?.touched,
         }"
       />
       <div
         *ngIf="
-          itemForm.get('field_3')?.invalid && itemForm.get('field_3')?.touched
+          recordForm.get('field_3')?.invalid &&
+          recordForm.get('field_3')?.touched
         "
         class="mt-1 text-sm text-red-500"
       >
@@ -72,7 +74,7 @@
         pButton
         type="submit"
         label="Save"
-        [disabled]="loading"
+        [disabled]="loading || recordForm.invalid || !recordForm.dirty"
         class="flex-1"
       ></button>
       <button

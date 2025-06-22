@@ -37,7 +37,7 @@ import { of } from 'rxjs';
   templateUrl: './record-form.component.html',
 })
 export class RecordFormComponent implements OnInit {
-  itemForm: FormGroup;
+  recordForm: FormGroup;
   isEdit = false;
   itemId?: number;
   checked: boolean = false;
@@ -49,7 +49,7 @@ export class RecordFormComponent implements OnInit {
     private readonly route: ActivatedRoute,
     private readonly router: Router,
   ) {
-    this.itemForm = this.fb.group({
+    this.recordForm = this.fb.group({
       field_1: ['', Validators.required],
       field_2: [false],
       field_3: [0, Validators.required],
@@ -75,11 +75,12 @@ export class RecordFormComponent implements OnInit {
       .subscribe({
         next: (record) => {
           if (record) {
-            this.itemForm.patchValue({
+            this.recordForm.patchValue({
               field_1: record.field_1,
               field_2: record.field_2,
               field_3: record.field_3,
             });
+            this.recordForm.updateValueAndValidity();
           }
         },
         error: (err) => {
@@ -92,13 +93,14 @@ export class RecordFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.itemForm.invalid) {
-      this.itemForm.markAllAsTouched();
+    if (this.recordForm.invalid) {
+      this.recordForm.markAsPristine();
+      this.recordForm.markAllAsTouched();
       return;
     }
 
     this.loading = true;
-    const dto: Omit<Record, 'id'> = this.itemForm.value;
+    const dto: Omit<Record, 'id'> = this.recordForm.value;
 
     const obs =
       this.isEdit && this.itemId
