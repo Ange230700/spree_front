@@ -36,7 +36,6 @@
       <p-checkbox
         formControlName="field_2"
         inputId="field_2"
-        [(ngModel)]="checked"
         binary="true"
       ></p-checkbox>
       <label for="field_2" class="ml-2">Field 2</label>
@@ -74,7 +73,7 @@
         pButton
         type="submit"
         label="Save"
-        [disabled]="loading || recordForm.invalid || !recordForm.dirty"
+        [disabled]="loading || recordForm.invalid"
         class="flex-1"
       ></button>
       <button

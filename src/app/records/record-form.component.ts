@@ -94,7 +94,6 @@ export class RecordFormComponent implements OnInit {
 
   onSubmit() {
     if (this.recordForm.invalid) {
-      this.recordForm.markAsPristine();
       this.recordForm.markAllAsTouched();
       return;
     }
