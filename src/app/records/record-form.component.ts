@@ -20,7 +20,7 @@ import { ButtonModule } from 'primeng/button';
 
 // Angular core + RxJS
 import { CommonModule } from '@angular/common';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap, tap, finalize } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 @Component({
@@ -52,7 +52,7 @@ export class RecordFormComponent implements OnInit {
     this.recordForm = this.fb.group({
       field_1: ['', Validators.required],
       field_2: [false],
-      field_3: [0, Validators.required],
+      field_3: [0, [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -71,6 +71,9 @@ export class RecordFormComponent implements OnInit {
           const id = params.get('id');
           return id ? this.recordsService.getOne(+id) : of(null);
         }),
+        finalize(() => {
+          this.loading = false;
+        }),
       )
       .subscribe({
         next: (record) => {
@@ -80,7 +83,6 @@ export class RecordFormComponent implements OnInit {
               field_2: record.field_2,
               field_3: record.field_3,
             });
-            this.recordForm.updateValueAndValidity();
           }
         },
         error: (err) => {
