@@ -72,7 +72,8 @@
       <button
         pButton
         type="submit"
-        label="Save"
+        [label]="isEdit ? 'Update' : 'Create'"
+        [icon]="isEdit ? 'pi pi-pencil' : 'pi pi-save'"
         [disabled]="loading || recordForm.invalid"
         class="flex-1"
       ></button>
