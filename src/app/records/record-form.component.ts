@@ -83,6 +83,10 @@ export class RecordFormComponent implements OnInit {
               field_2: record.field_2,
               field_3: record.field_3,
             });
+            this.recordForm.markAsDirty();
+            Object.values(this.recordForm.controls).forEach((ctrl) =>
+              ctrl.markAsDirty(),
+            );
           }
         },
         error: (err) => {
@@ -96,7 +100,6 @@ export class RecordFormComponent implements OnInit {
 
   onSubmit() {
     if (this.recordForm.invalid) {
-      this.recordForm.markAllAsTouched();
       return;
     }
 
