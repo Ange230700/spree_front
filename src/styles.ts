@@ -51,4 +51,64 @@ export const MyPreset = definePreset(Material, {
       },
     },
   },
+  components: {
+    menubar: {
+      colorScheme: {
+        light: {
+          root: {
+            background: '{gray.200}',
+          },
+        },
+        dark: {
+          root: {
+            background: '{slate.900}',
+          },
+        },
+      },
+    },
+    datatable: {
+      colorScheme: {
+        light: {
+          header: {
+            cell: {
+              background: '{gray.200}',
+            },
+          },
+          row: {
+            background: '{gray.200}',
+          },
+          footer: {
+            cell: {
+              background: '{gray.200}',
+            },
+          },
+        },
+        dark: {
+          header: {
+            cell: {
+              background: '{slate.900}',
+            },
+          },
+          row: {
+            background: '{slate.900}',
+          },
+          footer: {
+            cell: {
+              background: '{slate.900}',
+            },
+          },
+        },
+      },
+    },
+    paginator: {
+      colorScheme: {
+        light: {
+          background: '{gray.200}',
+        },
+        dark: {
+          background: '{slate.900}',
+        },
+      },
+    },
+  },
 });
