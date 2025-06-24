@@ -14,7 +14,7 @@ SpreeFront est un template d’application Angular moderne, conçu pour un déve
 - [Prise en main](#prise-en-main)
 - [Lancement du projet](#lancement-du-projet)
 - [Structure du projet](#structure-du-projet)
-- [Documentation API](#documentation-api)
+<!-- - [Documentation API](#documentation-api) -->
 - [Tests](#tests)
 - [Déploiement](#déploiement)
 - [Variables d’environnement](#variables-denvironnement)
@@ -88,10 +88,11 @@ Accédez à l’application sur [http://localhost:4200](http://localhost:4200).
 └── ...                  # Autres fichiers de configuration
 ```
 
+<!--
 ## Documentation API
 
 Ce template ne propose pas d’intégration API par défaut.
-Ajoutez vos propres services ou liez la [documentation API](docs/api.md) ici si besoin.
+Ajoutez vos propres services ou liez la [documentation API](docs/api.md) ici si besoin. -->
 
 ## Tests
 
@@ -131,19 +132,28 @@ export const environment = {
 
 ## Contribuer
 
-Contributions bienvenues ! Pour participer :
+En tant que collaborateur, on peut suivre ces étapes :
 
-1. Forkez le dépôt
-2. Créez une branche (`git checkout -b feature/la-fonctionnalite`)
-3. Commitez vos modifications (`npm run commit` ou `git commit`)
-4. Poussez la branche (`git push origin feature/la-fonctionnalite`)
-5. Ouvrez une Pull Request
+1. Clone le repo
+2. S'assurer que la branche `dev` est à jour (`git pull origin dev`)
+3. Créer une branche (`git checkout -b feat/nom-de-la-fonctionnalite`)
+4. Commiter les changements (`git commit -m 'feat: ajoute la fonctionnalité'` ou `npm run commit`)
+5. Pusher la branche (`git push origin feat/nom-de-la-fonctionnalite`)
+6. Créer une Pull Request
+
+Les contributions externes sont bienvenues ! Merci de suivre ces étapes :
+
+1. Fork le repo
+2. Crée une nouvelle branche (`git checkout -b feat/nom-de-la-fonctionnalite`)
+3. Commiter les changements (`git commit -m 'feat: ajoute la fonctionnalité'`)
+4. Push ta branche (`git push origin feat/nom-de-la-fonctionnalite`)
+5. Crée une Pull Request
 
 > **Commitizen** et **Commitlint** assurent la standardisation des messages de commit.
 
 ## Licence
 
-Licence MIT
+UNLICENSED
 
 <!-- ## Remerciements
 
