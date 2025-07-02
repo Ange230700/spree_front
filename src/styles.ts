@@ -1,52 +1,65 @@
 // src\styles.ts
 
 import { definePreset } from '@primeng/themes';
-import Material from '@primeng/themes/material';
+import Lara from '@primeng/themes/lara';
 
-export const MyPreset = definePreset(Material, {
+export const MyPreset = definePreset(Lara, {
   semantic: {
-    primary: {
-      50: '{blue.50}',
-      100: '{blue.100}',
-      200: '{blue.200}',
-      300: '{blue.300}',
-      400: '{blue.400}',
-      500: '{blue.500}',
-      600: '{blue.600}',
-      700: '{blue.700}',
-      800: '{blue.800}',
-      900: '{blue.900}',
-      950: '{blue.950}',
-    },
     colorScheme: {
       light: {
+        primary: {
+          50: '{purple.50}',
+          100: '{purple.100}',
+          200: '{purple.200}',
+          300: '{purple.300}',
+          400: '{purple.400}',
+          500: '{purple.500}',
+          600: '{purple.600}',
+          700: '{purple.700}',
+          800: '{purple.800}',
+          900: '{purple.900}',
+          950: '{purple.950}',
+        },
         surface: {
-          50: '{gray.50}',
-          100: '{gray.100}',
-          200: '{gray.200}',
-          300: '{gray.300}',
-          400: '{gray.400}',
-          500: '{gray.500}',
-          600: '{gray.600}',
-          700: '{gray.700}',
-          800: '{gray.800}',
-          900: '{gray.900}',
-          950: '{gray.950}',
+          50: '{viva.50}',
+          100: '{viva.100}',
+          200: '{viva.200}',
+          300: '{viva.300}',
+          400: '{viva.400}',
+          500: '{viva.500}',
+          600: '{viva.600}',
+          700: '{viva.700}',
+          800: '{viva.800}',
+          900: '{viva.900}',
+          950: '{viva.950}',
         },
       },
       dark: {
+        primary: {
+          50: '{cyan.50}',
+          100: '{cyan.100}',
+          200: '{cyan.200}',
+          300: '{cyan.300}',
+          400: '{cyan.400}',
+          500: '{cyan.500}',
+          600: '{cyan.600}',
+          700: '{cyan.700}',
+          800: '{cyan.800}',
+          900: '{cyan.900}',
+          950: '{cyan.950}',
+        },
         surface: {
-          50: '{slate.50}',
-          100: '{slate.100}',
-          200: '{slate.200}',
-          300: '{slate.300}',
-          400: '{slate.400}',
-          500: '{slate.500}',
-          600: '{slate.600}',
-          700: '{slate.700}',
-          800: '{slate.800}',
-          900: '{slate.900}',
-          950: '{slate.950}',
+          50: '{viva.50}',
+          100: '{viva.100}',
+          200: '{viva.200}',
+          300: '{viva.300}',
+          400: '{viva.400}',
+          500: '{viva.500}',
+          600: '{viva.600}',
+          700: '{viva.700}',
+          800: '{viva.800}',
+          900: '{viva.900}',
+          950: '{viva.950}',
         },
       },
     },
@@ -56,12 +69,12 @@ export const MyPreset = definePreset(Material, {
       colorScheme: {
         light: {
           root: {
-            background: '{gray.200}',
+            background: '{viva.200}',
           },
         },
         dark: {
           root: {
-            background: '{slate.900}',
+            background: '{ocean.900}',
           },
         },
       },
@@ -71,30 +84,30 @@ export const MyPreset = definePreset(Material, {
         light: {
           header: {
             cell: {
-              background: '{gray.200}',
+              background: '{viva.200}',
             },
           },
           row: {
-            background: '{gray.200}',
+            background: '{viva.200}',
           },
           footer: {
             cell: {
-              background: '{gray.200}',
+              background: '{viva.200}',
             },
           },
         },
         dark: {
           header: {
             cell: {
-              background: '{slate.900}',
+              background: '{ocean.900}',
             },
           },
           row: {
-            background: '{slate.900}',
+            background: '{ocean.900}',
           },
           footer: {
             cell: {
-              background: '{slate.900}',
+              background: '{ocean.900}',
             },
           },
         },
@@ -103,10 +116,10 @@ export const MyPreset = definePreset(Material, {
     paginator: {
       colorScheme: {
         light: {
-          background: '{gray.200}',
+          background: '{viva.200}',
         },
         dark: {
-          background: '{slate.900}',
+          background: '{ocean.950}',
         },
       },
     },
