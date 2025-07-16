@@ -2,7 +2,41 @@
 
 <header>
   <p-menubar [model]="items">
+    <ng-template #start>
+      <h1 class="font-bold text-[var(--prime-primary-color)]">Spree</h1>
+    </ng-template>
+    <ng-template #item let-item let-root="root">
+      <a pRipple class="p-menubar-item-link flex items-center">
+        <span>{{ item.label }}</span>
+        <p-badge
+          *ngIf="item.badge"
+          [ngClass]="{ 'ml-auto': !root, 'ml-2': root }"
+          [value]="item.badge"
+        />
+        <span
+          *ngIf="item.shortcut"
+          class="border-surface bg-emphasis text-muted-color ml-auto rounded border p-1 text-xs"
+          >{{ item.shortcut }}</span
+        >
+        <i
+          *ngIf="item.items"
+          [ngClass]="['pi ml-auto', root ? 'pi-angle-down' : 'pi-angle-right']"
+        ></i>
+      </a>
+    </ng-template>
     <ng-template #end>
+      <p-button
+        icon="pi pi-user"
+        [rounded]="true"
+        [text]="true"
+        class="text-black"
+      />
+      <p-button
+        icon="pi pi-shopping-cart"
+        [rounded]="true"
+        [text]="true"
+        class="text-black"
+      />
       <p-button
         [icon]="colorMode === 'dark' ? 'pi pi-sun' : 'pi pi-moon'"
         [rounded]="true"
